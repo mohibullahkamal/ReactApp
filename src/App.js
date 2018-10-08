@@ -57,7 +57,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -79,6 +80,8 @@ class App extends Component {
           })}   {/*   .map() gives us a way to map simply maps every element in a given array into something else... It does this by executing a method on every element on a given array... */}
         </div>
       );
+
+      style.backgroundColor = 'red';
     }
 
     return (
