@@ -1,7 +1,3 @@
-body{
-    background-color: gray;
-}
-
 .Person {
     width: 60%;
     margin: 16px auto;
@@ -10,3 +6,5 @@ body{
     padding: 16px;
     text-align: center;
 }
+
+
