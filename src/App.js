@@ -18,13 +18,14 @@ class App extends Component {
       return p.id === id;
     });
 
-    const persons = {
-      ...this.state.persons[personIndex]
+    const person = {
+      ...this.state.persons[personIndex]   //This will distribute all objects into
     };
-    // const person = Object.assign({}, this.state.persons[personindex]);
+    // const person = Object.assign({}, this.state.persons[personindex]);   //old approach so not using it
+
     person.name = event.target.value;
 
-    const person = [...this.state.persons];
+    const persons = [...this.state.persons];
     persons[personIndex] = person;
 
     this.setState( {persons: persons} );
@@ -73,7 +74,7 @@ class App extends Component {
               name={person.name} 
               age={person.age} 
               key={person.id}   //Key so that it tracks which specific elements has changed and needs update
-              changed={(event) => this.nameChangedHandler(event, person)} />
+              changed={(event) => this.nameChangedHandler(event, person.id)} />
           })}   {/*   .map() gives us a way to map simply maps every element in a given array into something else... It does this by executing a method on every element on a given array... */}
         </div>
       );
