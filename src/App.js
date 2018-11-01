@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Radium from 'radium';
 import Person from './Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
 
 class App extends Component {
@@ -61,6 +62,10 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer'
+      ':hover': {
+        backgroundColor: lightgreen,
+        color: 'black'
+      }
     };
 
     let persons = null;
@@ -80,6 +85,10 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
+      style[':hover']= {
+        backgroundColor: pink,
+        color: 'black'
+      }
     }
 
     // let classes = ['red', 'bold'].join(' ');   //Very smart... the following array joins the two text into one "red bold"; now we can add to className in JSX
@@ -87,7 +96,7 @@ class App extends Component {
     if (this.state.persons.length <= 2) {
       classes.push('red');   //classes = ['red']
     }
-    if (this.state.persons.lenght <= 1) {
+    if (this.state.persons.length <= 1) {
       classes.push('bold');   //classes = ['red', 'bold']
     }
     
@@ -108,5 +117,5 @@ class App extends Component {
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now??'));   //This is the JS version of the above JSX
   }
 }
-export default App;
+export default Radium(App);
 
