@@ -82,10 +82,21 @@ class App extends Component {
       style.backgroundColor = 'red';
     }
 
+    // let classes = ['red', 'bold'].join(' ');   //Very smart... the following array joins the two text into one "red bold"; now we can add to className in JSX
+    const classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red');   //classes = ['red']
+    }
+    if (this.state.persons.lenght <= 1) {
+      classes.push('bold');   //classes = ['red', 'bold']
+    }
+    
+
+
     return (
       <div className="App">
         <h1>Hi, I am a React App</h1>
-        <p>This is really working!!</p>
+        <p className={classes.join(' ')}>This is really working!!</p>
 
         {/* onClick is JSX syntax... */}
         <button 
