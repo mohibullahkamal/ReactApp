@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 // import Radium from 'radium';   //using css modules therefore getting rid of radium..
 import Person from './Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
 
@@ -55,19 +55,6 @@ class App extends Component {
 
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      // ':hover': {   //setting hover
-      //   backgroundColor: 'lightgreen',
-      //   color: 'black'
-      // }
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
@@ -84,7 +71,7 @@ class App extends Component {
         </div>
       );
 
-      style.backgroundColor = 'red';
+      // style.backgroundColor = 'red';
       // style[':hover'] = {
       //   backgroundColor: 'pink',
       //   color: 'black'
@@ -92,24 +79,24 @@ class App extends Component {
     }
 
     // let classes = ['red', 'bold'].join(' ');   //Very smart... the following array joins the two text into one "red bold"; now we can add to className in JSX
-    const classes = [];
+    const assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red');   //classes = ['red']
+      assignedClasses.push(classes.red);   //classes = ['red']
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');   //classes = ['red', 'bold']
+      assignedClasses.push(classes.bold);   //classes = ['red', 'bold']
     }
     
 
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I am a React App</h1>
-        <p className={classes.join(' ')}>This is really working!!</p>
+        <p className={assignedClasses.join(' ')}>This is really working!!</p>
 
         {/* onClick is JSX syntax... */}
         <button 
-          style={style}
+          // style={style}   //removing it because we no longer using inline props
           onClick = {this.togglePersonsHandler}> Toggle Persons</button>
         {persons}
       </div>
