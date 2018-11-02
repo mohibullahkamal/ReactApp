@@ -56,6 +56,7 @@ class App extends Component {
 
   render() {
     let persons = null;
+    let btnClass = null;
 
     if (this.state.showPersons) {
       persons = (
@@ -71,6 +72,7 @@ class App extends Component {
         </div>
       );
 
+      btnClass = classes.Red;
       // style.backgroundColor = 'red';
       // style[':hover'] = {
       //   backgroundColor: 'pink',
@@ -95,7 +97,8 @@ class App extends Component {
         <p className={assignedClasses.join(' ')}>This is really working!!</p>
 
         {/* onClick is JSX syntax... */}
-        <button 
+        <button
+          className= {btnClass}
           // style={style}   //removing it because we no longer using inline props
           onClick = {this.togglePersonsHandler}> Toggle Persons</button>
         {persons}
