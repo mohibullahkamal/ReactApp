@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+// import Radium from 'radium';   //using css modules therefore getting rid of radium..
 import './Person.css';
 
 const person = (props) => {
@@ -11,4 +11,4 @@ const person = (props) => {
         </div>
     )
 }
-export default Radium(person);
+export default person;

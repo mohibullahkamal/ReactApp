@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
+// import Radium from 'radium';   //using css modules therefore getting rid of radium..
 import Person from './Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false
-  }
+  } 
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -62,10 +62,10 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      // ':hover': {
+      //   backgroundColor: 'lightgreen',
+      //   color: 'black'
+      // }
     };
 
     let persons = null;
@@ -85,10 +85,10 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'pink',
-        color: 'black'
-      }
+      // style[':hover'] = {
+      //   backgroundColor: 'pink',
+      //   color: 'black'
+      // }   //remove hovering code because we are removing "radium" library
     }
 
     // let classes = ['red', 'bold'].join(' ');   //Very smart... the following array joins the two text into one "red bold"; now we can add to className in JSX
@@ -117,5 +117,5 @@ class App extends Component {
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now??'));   //This is the JS version of the above JSX
   }
 }
-export default Radium(App);
+export default App;
 
