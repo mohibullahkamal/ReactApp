@@ -6,9 +6,19 @@ class ErrorBoundary extends Component {
         errorMessage: ''
     }
 
-    // componentDidCatch
+    componentDidCatch = (error, info) => {   //new method: this recieved a potential error and some additional info passed into it automatically by React 
+        this.setState({hasError: true, errorMessage: error});
+    }
+
 
     render() {
-        return <h1>Something went wrong</h1>;
+        if (this.state.hasError) {
+            return <h1>{this.state.errorMessage}</h1>;
+        } else {
+            return this.props.children;   //important when accessing props in class...
+
+        }
     }
 }
+
+export default ErrorBoundary;
