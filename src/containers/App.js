@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 // import Radium from 'radium';   //using css modules therefore getting rid of radium..
-import Person from './Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
+import Person from '../components/Persons/Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
