@@ -1,8 +1,10 @@
+// import Radium from 'radium';   //using css modules therefore getting rid of radium..
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+
 import React, { Component } from 'react';
 import classes from './App.css';
-// import Radium from 'radium';   //using css modules therefore getting rid of radium..
-import Person from '../components/Persons/Person/Person';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Persons from '../components/Persons/Persons';   // we can name anything... there we are following the convension -> naming it 'Person' after the 'Person.js'
+
 
 
 class App extends Component {
@@ -58,19 +60,15 @@ class App extends Component {
 
   render() {
     let persons = null;
-    let btnClass = null;
+    let btnClass = '';
 
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
-            return <Person
-              click={() => this.deletePersonHandler(index)}
-              name={person.name} 
-              age={person.age} 
-              key={person.id}   //Key so that it tracks which specific elements has changed and needs update
-              changed={(event) => this.nameChangedHandler(event, person.id)} />
-          })}   {/*   .map() gives us a way to map simply maps every element in a given array into something else... It does this by executing a method on every element on a given array... */}
+          <Persons 
+            persons = {this.state.persons}
+            clicked = {this.deletePersonHandler}
+            changed = {this.nameChangedHandler} />
         </div>
       );
 
