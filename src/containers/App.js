@@ -1,5 +1,5 @@
 // import Radium from 'radium';   //using css modules therefore getting rid of radium..
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+// import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 import React, { Component } from 'react';
 import classes from './App.css';
