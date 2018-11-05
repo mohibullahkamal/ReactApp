@@ -73,6 +73,7 @@ class App extends Component {
       );
 
       btnClass = classes.Red;
+      
       // style.backgroundColor = 'red';
       // style[':hover'] = {
       //   backgroundColor: 'pink',
