@@ -1,5 +1,7 @@
 import React from 'react';
 
+import classes from './Cockpit.css';
+
 const cockpit = (props) => {
 
     // let classes = ['red', 'bold'].join(' ');   //Very smart... the following array joins the two text into one "red bold"; now we can add to className in JSX
