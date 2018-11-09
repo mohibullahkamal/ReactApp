@@ -12,24 +12,22 @@ const cockpit = (props) => {
         btnClass = classes.Red;
     }
     
-    if (this.props.persons.length <= 2) {
+    if (props.persons.length <= 2) {
         assignedClasses.push(classes.red);   //classes = ['red']
     }
-    if (this.props.persons.length <= 1) {
+    if (props.persons.length <= 1) {
         assignedClasses.push(classes.bold);   //classes = ['red', 'bold']
     }
 
     return (
         <div className={classes.Cockpit}>
-            <h1>Hi, I am a React App</h1>
+            <h1>{props.appTitle}</h1>
             <p className={assignedClasses.join(' ')}>This is really working!!</p>
 
             <button
-            className= {btnClass}
-            // style={style}   //removing it because we no longer using inline props
-            onClick = {this.togglePersonsHandler}>
-                Toggle Persons
-            </button>
+                className= {btnClass}
+                // style={style}   //removing it because we no longer using inline props
+                onClick = {props.clicked}>Toggle Persons</button>
         </div>
     );
 };

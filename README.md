@@ -1,5 +1,6 @@
 
-_[Click to View DEMO](https://mohibullahkamal.github.io/ReactApp/)_
+
+
 ##### This project is under continuous development, therefore not complete.
 ***
 
